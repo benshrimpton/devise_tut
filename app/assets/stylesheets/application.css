@@ -13,10 +13,16 @@
  */
 
 body {
-	padding-top: 55px;
+	padding-top: 63px;
 }
 
 .navbar-fixed-top {
-	background: #FAFAFA;
+	background: #99CCFF;
+}
+
+.brand {
+	font-weight: 900;
+	font-size: 1.6em;
+	text-decoration: none !important;
 }
 
