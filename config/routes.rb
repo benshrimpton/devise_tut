@@ -1,6 +1,15 @@
 Sukitfacebook::Application.routes.draw do
-  resources :statuses
+  match 'users/sign_in' => 'statuses#index'
 
+  devise_for :users
+  devise_for :users, path: "auth", path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', registration: 'register', sign_up: 'cmon_let_me_in' }
+  # devise_scope :user do
+  #   get 'register', to: 'devise/registrations#new', as: :register
+  #   get 'icecream', to: 'devise/registrations#new', as: :icecream
+  # end
+
+  resources :statuses
+  root to: 'statuses#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
